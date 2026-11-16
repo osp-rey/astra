@@ -1,0 +1,38 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-title {
+  font-family: "Prata", sans-serif;
+  margin: 0;
+  font-weight: 400;
+  font-size: 60px;
+
+  @include laptop {
+    font-size: 50px;
+  }
+  @include laptop-middle {
+    font-size: 45px;
+  }
+  @include laptop-min {
+    font-size: 38px;
+  }
+  @include tablet {
+    font-size: 32px;
+  }
+  @include tablet-min {
+    font-size: 28px;
+  }
+}
+.t-title {
+  font-family: "Prata", sans-serif;
+  margin: 0;
+  font-weight: 400;
+  font-size: 28px;
+
+  @include laptop {
+    font-size: 24px;
+  }
+  @include laptop-min {
+    font-size: 22px;
+  }
+}

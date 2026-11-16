@@ -1,0 +1,37 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.btn-s {
+  --border: var(--primary);
+  --background: var(--primary);
+  --color: white;
+  --border-h: var(--dark);
+  --background-h: var(--dark);
+  --color-h: white;
+
+  @include flex-center;
+  width: fit-content;
+  cursor: pointer;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  outline: none;
+  padding: 17px 32px;
+
+  border-radius: 100px;
+  color: var(--color);
+  width: fit-content;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+
+  @include hover {
+    color: var(--color-h);
+    background-color: var(--background-h);
+    border-color: var(--border-h);
+  }
+  @include tablet {
+    padding: 14px 25px;
+  }
+}

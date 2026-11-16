@@ -1,0 +1,73 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-features {
+  padding: 50px 0px;
+  @include tablet {
+    padding: 30px 0px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    @include laptop-middle {
+      gap: 30px;
+    }
+    @include laptop-min {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include tablet {
+      gap: 20px;
+    }
+    @include tablet-min {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    @include desktop {
+      gap: 30px;
+    }
+    @include tablet {
+      gap: 20px;
+    }
+
+    .item-icon {
+      display: block;
+      width: 80px;
+      flex-shrink: 0;
+      @include desktop {
+        width: 70px;
+      }
+      @include tablet {
+        width: 60px;
+      }
+    }
+    .item-body {
+    }
+    .item-name {
+      line-height: 155%;
+      color: var(--abbey);
+      margin-bottom: 15px;
+      @include desktop {
+        margin-bottom: 10px;
+      }
+    }
+    .item-val {
+      font-family: "Prata", sans-serif;
+      font-size: 28px;
+      @include desktop {
+        font-size: 24px;
+      }
+      @include laptop-middle {
+        font-size: 22px;
+      }
+      @include tablet {
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.burger-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 110;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+
+  &._active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.burger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  width: 340px;
+  max-width: 100%;
+  background-color: white;
+  padding: 15px 20px 25px 20px;
+  z-index: 120;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100%);
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease,
+    transform 0.4s ease;
+
+  &._open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  &__head {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  &__logo {
+    display: block;
+    width: 60px;
+  }
+  &__close {
+    @include flex-center;
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    li._important {
+      a {
+        color: var(--primary);
+        text-shadow:
+          0.3px 0 0 currentColor,
+          0 0.3px 0 currentColor,
+          -0.3px 0 0 currentColor,
+          0 -0.3px 0 currentColor;
+        @include hover {
+          color: var(--dark);
+        }
+      }
+    }
+    a {
+      transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+      @include hover {
+        color: var(--primary);
+        text-shadow:
+          0.3px 0 0 currentColor,
+          0 0.3px 0 currentColor,
+          -0.3px 0 0 currentColor,
+          0 -0.3px 0 currentColor;
+      }
+    }
+  }
+  &__contacts {
+    padding-top: 30px;
+    margin-top: auto;
+  }
+  &__tel {
+    display: block;
+    width: fit-content;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+    @include hover {
+      color: var(--primary);
+    }
+  }
+  &__btn {
+    width: 100%;
+    margin-top: 20px;
+  }
+}

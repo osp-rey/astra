@@ -1,0 +1,199 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.header {
+  padding: 30px 0px;
+  background-color: white;
+  @include desktop {
+    padding: 20px 0px;
+  }
+  @include laptop {
+    padding: 20px 0px 0px 0px;
+  }
+  @include laptop-min {
+    padding: 15px 0px;
+  }
+  &__wrap {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    @include desktop {
+      gap: 30px;
+    }
+    @include laptop-min {
+      gap: 20px;
+    }
+  }
+  &__logo {
+    flex-shrink: 0;
+    width: 145px;
+    border-right: 1px solid rgba(116, 143, 201, 0.15);
+
+    @include desktop {
+      width: 120px;
+    }
+    @include laptop {
+      width: 75px;
+    }
+    @include tablet-min {
+      width: 60px;
+    }
+
+    img {
+      display: block;
+      width: 95px;
+      @include desktop {
+        width: 85px;
+      }
+      @include laptop {
+        width: 60px;
+      }
+      @include tablet-min {
+        width: 50px;
+      }
+    }
+  }
+  &__body {
+    flex: 1;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  &__top-name {
+    font-size: 14px;
+    max-width: 185px;
+    @include laptop-min {
+      display: none;
+    }
+  }
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin-left: auto;
+
+    @include laptop-min {
+      gap: 15px;
+    }
+  }
+  &__tel-mob {
+    @include flex-center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+    @include hover {
+      background-color: var(--dark);
+    }
+
+    @media (min-width: 1026px) {
+      display: none;
+    }
+  }
+  &__contacts-wrap {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    @include laptop-min {
+      gap: 30px;
+    }
+  }
+  &__tel {
+    font-weight: 600;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    @include hover {
+      color: var(--primary);
+    }
+    @include laptop-min {
+      display: none;
+    }
+  }
+  &__btn {
+    @include laptop-min {
+      display: none;
+    }
+  }
+  &__burger-btn {
+    @include flex-center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--dark);
+    color: white;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+    @include hover {
+      background-color: var(--primary);
+    }
+    @media (min-width: 1026px) {
+      display: none;
+    }
+  }
+  &__nav {
+    margin-top: 20px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(116, 143, 201, 0.15);
+    @include desktop {
+      margin-top: 15px;
+      padding-top: 20px;
+      font-size: 15px;
+    }
+    @include laptop {
+      padding: 15px;
+    }
+    @include laptop-middle {
+      padding: 15px 10px;
+    }
+    @include laptop-min {
+      position: absolute;
+      left: -9999px;
+      z-index: -9999;
+    }
+  }
+  &__list {
+    @include flex-between;
+    gap: 30px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    @include desktop {
+      gap: 20px;
+    }
+    @include laptop-middle {
+      font-size: 14px;
+      gap: 10px;
+    }
+
+    li._important {
+      a {
+        color: var(--primary);
+        text-shadow:
+          0.3px 0 0 currentColor,
+          0 0.3px 0 currentColor,
+          -0.3px 0 0 currentColor,
+          0 -0.3px 0 currentColor;
+        @include hover {
+          color: var(--dark);
+        }
+      }
+    }
+    a {
+      transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+      @include hover {
+        color: var(--primary);
+        text-shadow:
+          0.3px 0 0 currentColor,
+          0 0.3px 0 currentColor,
+          -0.3px 0 0 currentColor,
+          0 -0.3px 0 currentColor;
+      }
+    }
+  }
+}
