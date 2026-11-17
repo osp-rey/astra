@@ -4,21 +4,89 @@
 .card-plan {
   display: flex;
   flex-direction: column;
+  width: 100%;
+
+  @include hover {
+    .card-plan__gallery-slide {
+      &::before {
+        border-color: var(--primary);
+      }
+    }
+    .card-plan__body {
+      border-color: var(--primary);
+    }
+  }
+
+  &._reverse {
+    @media (min-width: 1366px) {
+      flex-direction: row;
+      gap: 10px;
+
+      .card-plan__gallery-slider {
+        width: auto;
+        width: 62%;
+        @include desktop {
+          width: 55%;
+        }
+      }
+      .card-plan__body {
+        @include desktop {
+          padding: 20px;
+        }
+      }
+    }
+  }
+
   &__gallery-slider {
     width: 100%;
+    margin: 0 !important;
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+
+      @include laptop-min {
+        display: none !important;
+      }
+
+      &._prev {
+        left: 10px;
+      }
+      &._next {
+        right: 10px;
+      }
+    }
+
+    .slider-pagination-m {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
   }
   &__gallery-slide {
     width: 100%;
-    border: 1px solid rgba(116, 143, 201, 0.15);
-    border-radius: 20px;
+    border-radius: var(--radius-simple);
     overflow: hidden;
     aspect-ratio: 1/1;
 
-    transition: border-color 0.3s ease;
     @include hover {
       img {
         transform: scale(1.08);
       }
+    }
+    
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      border-radius: var(--radius-simple);
+      border: 1px solid rgba(116, 143, 201, 0.15);
+      z-index: 1;
+      transition: border-color 0.3s ease;
     }
 
     img {
@@ -32,9 +100,22 @@
     }
   }
   &__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     padding: 40px;
-    border-radius: 20px;
+    border-radius: var(--radius-simple);
+    border: 1px solid rgba(116, 143, 201, 0.15);
     background-color: var(--whisper);
+
+    transition: border-color 0.3s ease;
+
+    @include laptop {
+      padding: 25px;
+    }
+    @include laptop-min {
+      padding: 20px;
+    }
   }
   &__type {
     line-height: 155%;
@@ -45,6 +126,9 @@
     font-family: "Prata", sans-serif;
     font-size: 40px;
     margin-top: 10px;
+    @include laptop-min {
+      font-size: 32px;
+    }
   }
   &__floor {
     opacity: 0.5;
