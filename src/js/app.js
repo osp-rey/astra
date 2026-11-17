@@ -1,13 +1,16 @@
 import burger from "./functions/burger.js";
 import buttonsNote from "./functions/buttonsNote.js";
 import changeModaltitle from "./functions/changeModalTitle.js";
+import { header } from "./functions/header.js";
 import hero from "./functions/hero.js";
 import inputmask from "./functions/inputmask.js";
 import mediaAdaptive from "./functions/mediaAdaptive.js";
 import more from "./functions/more.js";
+import sect from "./functions/sect.js";
 import sliders from "./functions/sliders.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  header();
   mediaAdaptive();
   burger();
   inputmask();
@@ -16,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonsNote();
   changeModaltitle();
   more();
+  sect();
 
   Fancybox.bind("[data-fancybox]", {
     on: {

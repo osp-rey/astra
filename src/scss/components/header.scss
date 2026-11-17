@@ -11,7 +11,10 @@
     padding: 20px 0px 0px 0px;
   }
   @include laptop-min {
-    padding: 15px 0px;
+    padding: 10px 0px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
   &__wrap {
     display: flex;
@@ -36,7 +39,7 @@
       width: 75px;
     }
     @include tablet-min {
-      width: 60px;
+      width: 50px;
     }
 
     img {
@@ -49,7 +52,7 @@
         width: 60px;
       }
       @include tablet-min {
-        width: 50px;
+        width: 40px;
       }
     }
   }
@@ -166,6 +169,109 @@
     }
     @include laptop-middle {
       font-size: 14px;
+      gap: 10px;
+    }
+
+    li._important {
+      a {
+        color: var(--primary);
+        text-shadow:
+          0.3px 0 0 currentColor,
+          0 0.3px 0 currentColor,
+          -0.3px 0 0 currentColor,
+          0 -0.3px 0 currentColor;
+        @include hover {
+          color: var(--dark);
+        }
+      }
+    }
+    a {
+      transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+      @include hover {
+        color: var(--primary);
+        text-shadow:
+          0.3px 0 0 currentColor,
+          0 0.3px 0 currentColor,
+          -0.3px 0 0 currentColor,
+          0 -0.3px 0 currentColor;
+      }
+    }
+  }
+}
+
+.header-f {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 20px 0px;
+  background-color: white;
+  transform: translateY(-100%);
+
+  transition: transform 0.4s ease;
+
+  @include laptop-middle {
+    padding: 15px 0px;
+    display: none !important;
+  }
+
+  &._scroll {
+    transform: translateY(0);
+  }
+  &._hide {
+    transform: translateY(-100%);
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    @include laptop {
+      gap: 20px;
+    }
+  }
+  &__logo {
+    display: block;
+    width: 85px;
+    border-right: 1px solid rgba(116, 143, 201, 0.15);
+
+    @include laptop {
+      width: 75px;
+    }
+    @include laptop-middle {
+      width: 70px;
+    }
+
+    img {
+      display: block;
+      width: 70px;
+      @include laptop {
+        width: 60px;
+      }
+      @include laptop-middle {
+        width: 50px;
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    gap: 20px;
+
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include laptop {
+      font-size: 15px;
+      gap: 15px;
+    }
+    @include laptop-middle {
+      font-size: 13px;
       gap: 10px;
     }
 
