@@ -95,9 +95,9 @@ export default function sliders() {
       speed: 900,
       slidesPerView: "auto",
       spaceBetween: 15,
-      // autoplay: {
-      //   delay: 6000
-      // },
+      autoplay: {
+        delay: 6000,
+      },
       navigation: {
         prevEl: wrap.querySelector(".slider-arrow._prev"),
         nextEl: wrap.querySelector(".slider-arrow._next"),
@@ -112,6 +112,48 @@ export default function sliders() {
           spaceBetween: 20,
         },
       },
+    });
+  }
+
+  const architectureSlider = document.querySelector(".s-architecture__slider");
+  if (architectureSlider) {
+    const swiper = new Swiper(architectureSlider, {
+      speed: 1500,
+      autoplay: {
+        delay: 6500,
+      },
+      navigation: {
+        prevEl: ".s-architecture .slider-arrow._prev",
+        nextEl: ".s-architecture .slider-arrow._next",
+      },
+    });
+  }
+
+  const progressSliders = document.querySelectorAll(".s-progress__slider");
+  if (progressSliders.length) {
+    const wrapArrows = document.querySelector(".s-progress__arrows-wrap");
+
+    progressSliders.forEach((slider) => {
+      const tab = slider.closest("[data-tab]");
+      const tabId = tab.dataset.tab;
+      const tabArrows = wrapArrows.querySelector(`[data-tab="${tabId}"]`);
+
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        autoplay: {
+          delay: 6500
+        },
+        navigation: {
+          prevEl: tabArrows.querySelector(".slider-arrow._prev"),
+          nextEl: tabArrows.querySelector(".slider-arrow._next"),
+        },
+        scrollbar: {
+          el: tab.querySelector(".slider-scrollbar"),
+          draggable: true,
+        },
+      });
     });
   }
 }

@@ -25,13 +25,30 @@ export default function gsapAnim() {
   const enumItems = document.querySelectorAll(".s-enum__item");
 
   if (enumItems.length) {
-    const images = []
+    const images = [];
+
+    let y = -280;
+
+    if (window.matchMedia("(max-width: 1365px)").matches) {
+      y = -200;
+    }
+    if (window.matchMedia("(max-width: 1199px)").matches) {
+      y = -150;
+    }
+    if (window.matchMedia("(max-width: 1025px)").matches) {
+      y = -100;
+    }
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      y = 50;
+    }
+
     enumItems.forEach((item, index) => {
+      const body = item.querySelector(".s-enum__item-body");
       if (index !== 0) {
         const img = item.querySelector(".s-enum__item-img");
         images.push(img);
-        gsap.set(img, { y: -280 });
-        
+        gsap.set(img, { y });
+
         gsap.to(img, {
           y: 0,
           ease: "none",
@@ -43,8 +60,6 @@ export default function gsapAnim() {
           },
         });
       }
-
     });
-
   }
 }

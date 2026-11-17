@@ -16,6 +16,7 @@
   border: 1px solid var(--border);
   outline: none;
   padding: 17px 32px;
+  gap: 15px;
 
   border-radius: 100px;
   color: var(--color);
@@ -39,6 +40,14 @@
     --border: white;
     --background: white;
     --color: var(--dark);
+    --border-h: var(--primary);
+    --background-h: var(--primary);
+    --color-h: white;
+  }
+  &._outline-primary {
+    --border: var(--primary);
+    --background: transparent;
+    --color: white;
     --border-h: var(--primary);
     --background-h: var(--primary);
     --color-h: white;

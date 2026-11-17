@@ -3,6 +3,11 @@
 
 .content-box {
   line-height: 150%;
+
+  &._abbey {
+    color: var(--abbey);
+  }
+
   & > * {
     margin: 0;
     &:not(:last-child) {

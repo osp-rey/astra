@@ -19,6 +19,7 @@
 @use "./ui/sect-nav";
 @use "./ui/card-plan";
 @use "./ui/more";
+@use "./ui/card-promo";
 
 @use "./components/header";
 @use "./components/burger";
@@ -32,5 +33,11 @@
 @use "./components/s-info";
 @use "./components/s-preview";
 @use "./components/s-enum";
+@use "./components/s-architecture";
+@use "./components/s-presentation";
+@use "./components/s-progress";
+@use "./components/s-promo";
+@use "./components/s-item";
+@use "./components/s-docs";
 
 @use "./components/footer";

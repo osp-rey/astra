@@ -1,0 +1,45 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.card-promo {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-simple);
+  padding: 40px;
+  background-color: var(--rhino);
+  color: white;
+
+  transition: background-color .3s ease;
+
+  @include laptop {
+    padding: 25px;
+  }
+  @include hover {
+    background-color: var(--san);
+  }
+  @include tablet {
+    padding: 20px;
+  }
+
+  .item-name {
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 10px;
+  }
+  .item-val {
+    font-size: 44px;
+    font-family: "Prata", sans-serif;
+    margin-bottom: 30px;
+    @include laptop {
+      font-size: 38px;
+    }
+    @include laptop-min {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+  }
+  .item-btn {
+    margin-top: auto;
+  }
+}

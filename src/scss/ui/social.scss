@@ -22,8 +22,11 @@
       opacity: 0.8;
     }
 
+    &._big {
+      width: 54px;
+      height: 54px;
+    }
     &._max {
-      font-size: 18px;
       --background:
         linear-gradient(73.55deg, #4cf 14.56%, #53e 63.57%, #93d 88.6%),
         radial-gradient(
@@ -31,10 +34,19 @@
           #00f 0%,
           rgba(0, 0, 0, 0) 100%
         );
+      font-size: 18px;
+
+      &._big {
+        font-size: 25px;
+      }
     }
     &._tg {
       --background: linear-gradient(180deg, #2aabee 0%, #229ed9 9925.83%);
       font-size: 14px;
+
+      &._big {
+        font-size: 20px;
+      }
     }
   }
 }

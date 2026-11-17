@@ -1,5 +1,5 @@
-@use '../base/templates' as *;
-@use '../base/media' as *;
+@use "../base/templates" as *;
+@use "../base/media" as *;
 
 .s-enum {
   &__wrap {
@@ -12,11 +12,22 @@
     @include laptop-min {
       gap: 40px;
     }
+    @include tablet {
+      gap: 30px;
+    }
   }
   &__item {
     display: flex;
     align-items: start;
     gap: 40px;
+
+    @include laptop-min {
+      gap: 20px;
+    }
+    @include tablet {
+      flex-direction: column !important;
+      align-items: start;
+    }
 
     &:nth-child(even) {
       justify-content: space-between;
@@ -27,9 +38,28 @@
     width: calc(50% - 20px);
     display: block;
     border-radius: var(--radius-simple);
+
+    @include laptop-min {
+      width: calc(50% - 10px);
+    }
+    @include tablet {
+      width: 600px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
   }
   &__item-body {
     max-width: 500px;
+    padding-bottom: 200px;
+    @include laptop {
+      padding-bottom: 150px;
+    }
+    @include laptop-middle {
+      padding-bottom: 100px;
+    }
+    @include tablet {
+      padding-bottom: 0;
+    }
 
     .content-box {
       margin-top: 15px;
