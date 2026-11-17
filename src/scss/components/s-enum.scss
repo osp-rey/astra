@@ -1,0 +1,38 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.s-enum {
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 80px;
+    @include laptop {
+      gap: 60px;
+    }
+    @include laptop-min {
+      gap: 40px;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: start;
+    gap: 40px;
+
+    &:nth-child(even) {
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+  }
+  &__item-img {
+    width: calc(50% - 20px);
+    display: block;
+    border-radius: var(--radius-simple);
+  }
+  &__item-body {
+    max-width: 500px;
+
+    .content-box {
+      margin-top: 15px;
+    }
+  }
+}

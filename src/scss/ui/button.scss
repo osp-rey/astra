@@ -34,4 +34,13 @@
   @include tablet {
     padding: 14px 25px;
   }
+
+  &._white {
+    --border: white;
+    --background: white;
+    --color: var(--dark);
+    --border-h: var(--primary);
+    --background-h: var(--primary);
+    --color-h: white;
+  }
 }
