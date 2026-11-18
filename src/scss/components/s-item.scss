@@ -3,6 +3,7 @@
 
 .s-item {
   padding-top: 0 !important;
+  overflow: hidden;
   &__wrap {
     display: flex;
     align-items: center;
@@ -11,11 +12,11 @@
       flex-wrap: wrap;
     }
   }
-  &__img {
+  &__gallery {
+    position: relative;
     width: calc(50% - 40px);
-    display: block;
     height: 800px;
-    object-fit: cover;
+    z-index: 10;
     @include desktop {
       height: 600px;
     }
@@ -25,6 +26,22 @@
     @include laptop-min {
       width: 100%;
       height: auto;
+    }
+  }
+  &__img {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100%;
+    max-width: 100vw;
+    object-fit: cover;
+    z-index: 10;
+    @include  laptop-min {
+      width: 100%;
+      height: auto;
+      position: static;
     }
   }
   &__info {

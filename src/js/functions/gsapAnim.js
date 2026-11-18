@@ -62,4 +62,22 @@ export default function gsapAnim() {
       }
     });
   }
+
+  const itemImg = document.querySelector(".s-item__img");
+  if (itemImg && window.matchMedia("(min-width: 1025px)").matches) {
+    let x = window.innerWidth * 0.5 + 40;
+
+    gsap.set(itemImg, { x });
+
+    gsap.to(itemImg, {
+      x: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".s-item",
+        start: "top bottom",
+        end: "bottom bottom+=200",
+        scrub: 1,
+      },
+    });
+  }
 }
