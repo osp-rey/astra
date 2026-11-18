@@ -4,15 +4,105 @@
 .s-docs {
   position: relative;
   &__wrap {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
   }
   &__item {
+    display: flex;
+    gap: 40px;
+    padding: 30px;
+
+    background-color: white;
+    flex: 0 1 570px;
+    border: 1px solid rgba(116, 143, 201, 0.15);
+    border-radius: var(--radius-simple);
+    user-select: none;
+
+    transition: border-color 0.3s ease;
+
+    @include laptop-middle {
+      flex: 1 1 calc(50% - 20px);
+      gap: 20px;
+    }
+    @include laptop-min {
+      padding: 20px;
+    }
+    @include tablet {
+      flex-basis: 100%;
+    }
+    @include hover {
+      border-color: var(--primary);
+    }
+
     .item-rect {
+      @include flex-center;
+      width: 90px;
+      height: 90px;
+      border-radius: 12px;
+      background-color: var(--primary);
+      color: white;
+      font-size: 50px;
+
+      @include laptop {
+        width: 80px;
+        height: 80px;
+        font-size: 36px;
+      }
+      @include laptop-min {
+        width: 65px;
+        height: 65px;
+      }
+      @include tablet {
+        width: 55px;
+        height: 55px;
+        font-size: 30px;
+      }
     }
     .item-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
     .item-name {
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 10px;
+      @include laptop-middle {
+        font-size: 18px;
+      }
+      @include tablet {
+        font-size: 16px;
+      }
     }
     .item-list {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: auto;
+      gap: 15px;
+      color: var(--abbey);
+      @include laptop-min {
+        gap: 10px;
+      }
+
+
+      span {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        @include laptop-min {
+          gap: 10px;
+        }
+
+        &:not(:last-child) {
+          &::after {
+            display: block;
+            content: "•";
+          }
+        }
+      }
     }
   }
 }

@@ -1,0 +1,126 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-connect {
+  &__body {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    z-index: 1;
+    color: white;
+    @include laptop-min {
+      grid-template-columns: 1fr;
+    }
+    @include tablet {
+      border-radius: 20px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+  }
+  &__block {
+    @include flex-center;
+    min-height: 655px;
+    padding: 30px;
+
+    @include laptop {
+      min-height: 500px;
+    }
+    @include laptop-min {
+      min-height: auto;
+    }
+    @include tablet {
+      padding: 30px 18px;
+    }
+
+    &._blur {
+      backdrop-filter: blur(30px);
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 1px solid white;
+
+      @include laptop-min {
+        border-left: none;
+      }
+    }
+  }
+  &__main-inside {
+    max-width: 600px;
+    width: 100%;
+    @include laptop-min {
+      max-width: none;
+    }
+  }
+  &__title {
+  }
+  &__adv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    row-gap: 25px;
+    margin-top: 50px;
+    @include laptop {
+      margin-top: 40px;
+      gap: 25px;
+    }
+    @include laptop-min {
+      margin-top: 30px;
+    }
+    @include tablet {
+      gap: 20px;
+    }
+  }
+  &__adv-item {
+    font-size: 18px;
+    flex: 0 1 245px;
+    @media (min-width: 1200px) {
+      &:not(:last-child) {
+        padding-right: 40px;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        @include laptop {
+          padding-right: 25px;
+        }
+      }
+    }
+    @include tablet {
+      font-size: 16px;
+      flex-basis: 200px;
+    }
+
+    .item-icon {
+      display: block;
+      max-width: 80px;
+      margin-bottom: 25px;
+      @include tablet {
+        margin-bottom: 15px;
+        max-width: 65px;
+      }
+    }
+  }
+  &__form-wrap {
+    border-left: 1px solid white;
+  }
+  &__form-inside {
+    max-width: 445px;
+    width: 100%;
+    @include laptop-min {
+      max-width: 600px;
+    }
+  }
+  &__form {
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    .btn-s[type="submit"] {
+      width: 100%;
+    }
+  }
+}
