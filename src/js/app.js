@@ -13,6 +13,7 @@ import sect from "./functions/sect.js";
 import sliders from "./functions/sliders.js";
 import tab from "./functions/tab.js";
 import topBtn from "./functions/topBtn.js";
+import preloader from "./functions/preloader.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   header();
@@ -47,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     },
   });
+  preloader();
 
   // Fancybox.show([{ src: "#modal-feedback", type: "inline" }]);
 });
