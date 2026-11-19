@@ -12,6 +12,7 @@ import more from "./functions/more.js";
 import sect from "./functions/sect.js";
 import sliders from "./functions/sliders.js";
 import tab from "./functions/tab.js";
+import topBtn from "./functions/topBtn.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   header();
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   maps();
   locationToggle();
   gsapAnim();
+  topBtn();
 
   Fancybox.bind("[data-fancybox]", {
     on: {

@@ -1,0 +1,148 @@
+.s-connect__body {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  z-index: 1;
+  color: white;
+}
+
+.s-connect__body::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.s-connect__block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 655px;
+  padding: 30px;
+}
+
+.s-connect__block._blur {
+  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 1px solid white;
+}
+
+.s-connect__main-inside {
+  max-width: 600px;
+  width: 100%;
+}
+
+.s-connect__adv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  row-gap: 25px;
+  margin-top: 50px;
+}
+
+.s-connect__adv-item {
+  font-size: 18px;
+  flex: 0 1 245px;
+}
+
+.s-connect__adv-item .item-icon {
+  display: block;
+  max-width: 80px;
+  margin-bottom: 25px;
+}
+
+.s-connect__form-wrap {
+  border-left: 1px solid white;
+}
+
+.s-connect__form-inside {
+  max-width: 445px;
+  width: 100%;
+}
+
+.s-connect__form .form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.s-connect__form .btn-s[type=submit] {
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .s-connect__adv-item:not(:last-child) {
+    padding-right: 40px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (max-width: 1365px) {
+  .s-connect__block {
+    min-height: 500px;
+  }
+
+  .s-connect__adv {
+    margin-top: 40px;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .s-connect__body {
+    grid-template-columns: 1fr;
+  }
+
+  .s-connect__block {
+    min-height: auto;
+  }
+
+  .s-connect__block._blur {
+    border-left: none;
+  }
+
+  .s-connect__main-inside {
+    max-width: none;
+  }
+
+  .s-connect__adv {
+    margin-top: 30px;
+  }
+
+  .s-connect__form-inside {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 767px) {
+  .s-connect__body {
+    border-radius: 20px;
+  }
+
+  .s-connect__block {
+    padding: 30px 18px;
+  }
+
+  .s-connect__adv {
+    gap: 20px;
+  }
+
+  .s-connect__adv-item {
+    font-size: 16px;
+    flex-basis: 200px;
+  }
+
+  .s-connect__adv-item .item-icon {
+    margin-bottom: 15px;
+    max-width: 65px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1365px) {
+  .s-connect__adv-item:not(:last-child) {
+    padding-right: 25px;
+  }
+}

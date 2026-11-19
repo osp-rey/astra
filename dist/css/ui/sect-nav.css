@@ -1,0 +1,96 @@
+.sect-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.sect-nav__buttons {
+  width: 100%;
+  border: 1px solid rgba(116, 143, 201, 0.15);
+  border-radius: 100px;
+  box-shadow: 0 0 30px 0 rgba(116, 143, 201, 0.15);
+}
+
+.sect-nav__buttons-shadow {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  width: 100px;
+  background: linear-gradient(270deg, #fff 15%, rgba(255, 255, 255, 0) 100%);
+  z-index: 10;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sect-nav__buttons-shadow._prev {
+  transform: rotate(180deg);
+  left: -1px;
+}
+
+.sect-nav__buttons-shadow._next {
+  right: -1px;
+}
+
+.sect-nav__buttons-shadow.swiper-button-disabled {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sect-nav__toggle {
+  padding: 17px 30px;
+  box-sizing: border-box;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sect-nav__toggle._active {
+  color: white;
+  background-color: var(--dark);
+}
+
+.sect-nav__btn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 1365px) {
+  .sect-nav {
+    margin-bottom: 60px;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .sect-nav {
+    margin-bottom: 40px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .sect-nav__buttons-shadow {
+    width: 50px;
+  }
+
+  .sect-nav__toggle {
+    padding: 14px 20px;
+  }
+}
+
+@media (any-hover: hover) {
+  .sect-nav__toggle:hover {
+    color: white;
+    background-color: var(--dark);
+  }
+}
+
+@media (hover: none) {
+  .sect-nav__toggle:active {
+    color: white;
+    background-color: var(--dark);
+  }
+}

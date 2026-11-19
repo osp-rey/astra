@@ -1,0 +1,62 @@
+.btn-s {
+  --border: var(--primary);
+  --background: var(--primary);
+  --color: white;
+  --border-h: var(--dark);
+  --background-h: var(--dark);
+  --color-h: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  cursor: pointer;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  outline: none;
+  padding: 17px 32px;
+  gap: 15px;
+  border-radius: 100px;
+  color: var(--color);
+  width: fit-content;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-s._white {
+  --border: white;
+  --background: white;
+  --color: var(--dark);
+  --border-h: var(--primary);
+  --background-h: var(--primary);
+  --color-h: white;
+}
+
+.btn-s._outline-primary {
+  --border: var(--primary);
+  --background: transparent;
+  --color: white;
+  --border-h: var(--primary);
+  --background-h: var(--primary);
+  --color-h: white;
+}
+
+@media (max-width: 767px) {
+  .btn-s {
+    padding: 14px 25px;
+  }
+}
+
+@media (any-hover: hover) {
+  .btn-s:hover {
+    color: var(--color-h);
+    background-color: var(--background-h);
+    border-color: var(--border-h);
+  }
+}
+
+@media (hover: none) {
+  .btn-s:active {
+    color: var(--color-h);
+    background-color: var(--background-h);
+    border-color: var(--border-h);
+  }
+}

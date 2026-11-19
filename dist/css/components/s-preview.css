@@ -1,0 +1,131 @@
+.s-preview {
+  overflow: hidden;
+}
+
+.s-preview__wrap {
+  display: flex;
+  gap: 20px;
+}
+
+.s-preview__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.s-preview__slider-wrap {
+  position: relative;
+  margin-top: auto;
+}
+
+.s-preview__slider-wrap .slider-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+}
+
+.s-preview__slider-wrap .slider-arrow._prev {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.s-preview__slider-wrap .slider-arrow._next {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.s-preview__slider {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.s-preview__slide {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: var(--radius-simple);
+}
+
+.s-preview__slide img {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s linear;
+}
+
+.s-preview__img {
+  display: block;
+  width: calc(50% - 10px);
+  object-fit: cover;
+  border-radius: var(--radius-simple);
+}
+
+@media (min-width: 1026px) {
+  .s-preview__slider-wrap .slider-scrollbar {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1820px) {
+  .s-preview__slider-wrap .slider-arrow._prev {
+    left: 10px;
+    transform: translate(0, -50%);
+  }
+
+  .s-preview__slider-wrap .slider-arrow._next {
+    right: 10px;
+    transform: translate(0, -50%);
+  }
+}
+
+@media (max-width: 1025px) {
+  .s-preview__wrap {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .s-preview__info {
+    flex: auto;
+    width: 100%;
+  }
+
+  .s-preview__slider-wrap .slider-arrow {
+    display: none;
+  }
+
+  .s-preview__slider {
+    overflow: visible !important;
+  }
+
+  .s-preview__slide {
+    width: 350px !important;
+    max-width: 100%;
+  }
+
+  .s-preview__img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .s-preview__slide {
+    width: 300px !important;
+  }
+}
+
+@media (any-hover: hover) {
+  .s-preview__slide:hover img {
+    transform: scale(1.08);
+  }
+}
+
+@media (hover: none) {
+  .s-preview__slide:active img {
+    transform: scale(1.08);
+  }
+}

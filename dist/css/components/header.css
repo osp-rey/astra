@@ -1,0 +1,376 @@
+.header {
+  padding: 30px 0px;
+  background-color: white;
+}
+
+.header__wrap {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.header__logo {
+  flex-shrink: 0;
+  width: 145px;
+  border-right: 1px solid rgba(116, 143, 201, 0.15);
+}
+
+.header__logo img {
+  display: block;
+  width: 95px;
+}
+
+.header__body {
+  flex: 1;
+}
+
+.header__row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header__top-name {
+  font-size: 14px;
+  max-width: 185px;
+}
+
+.header__contacts {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  margin-left: auto;
+}
+
+.header__tel-mob {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.header__contacts-wrap {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.header__tel {
+  font-weight: 600;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.header__burger-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--dark);
+  color: white;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.header__nav {
+  margin-top: 20px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(116, 143, 201, 0.15);
+}
+
+.header__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.header__list li._important a {
+  color: var(--primary);
+  text-shadow: 0.3px 0 0 currentColor, 0 0.3px 0 currentColor, -0.3px 0 0 currentColor, 0 -0.3px 0 currentColor;
+}
+
+.header__list a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.header-f {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 20px 0px;
+  background-color: white;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+.header-f._scroll {
+  transform: translateY(0);
+}
+
+.header-f._hide {
+  transform: translateY(-100%);
+}
+
+.header-f__wrap {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header-f__logo {
+  display: block;
+  width: 85px;
+  border-right: 1px solid rgba(116, 143, 201, 0.15);
+}
+
+.header-f__logo img {
+  display: block;
+  width: 70px;
+}
+
+.header-f__list {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  gap: 20px;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.header-f__list li._important a {
+  color: var(--primary);
+  text-shadow: 0.3px 0 0 currentColor, 0 0.3px 0 currentColor, -0.3px 0 0 currentColor, 0 -0.3px 0 currentColor;
+}
+
+.header-f__list a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+@media (min-width: 1026px) {
+  .header__tel-mob {
+    display: none;
+  }
+
+  .header__burger-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 1539px) {
+  .header {
+    padding: 20px 0px;
+  }
+
+  .header__wrap {
+    gap: 30px;
+  }
+
+  .header__logo {
+    width: 120px;
+  }
+
+  .header__logo img {
+    width: 85px;
+  }
+
+  .header__nav {
+    margin-top: 15px;
+    padding-top: 20px;
+    font-size: 15px;
+  }
+
+  .header__list {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1365px) {
+  .header {
+    padding: 20px 0px 0px 0px;
+  }
+
+  .header__logo {
+    width: 75px;
+  }
+
+  .header__logo img {
+    width: 60px;
+  }
+
+  .header__nav {
+    padding: 15px;
+  }
+
+  .header-f__wrap {
+    gap: 20px;
+  }
+
+  .header-f__logo {
+    width: 75px;
+  }
+
+  .header-f__logo img {
+    width: 60px;
+  }
+
+  .header-f__list {
+    font-size: 15px;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header__nav {
+    padding: 15px 10px;
+  }
+
+  .header__list {
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .header-f {
+    padding: 15px 0px;
+    display: none !important;
+  }
+
+  .header-f__logo {
+    width: 70px;
+  }
+
+  .header-f__logo img {
+    width: 50px;
+  }
+
+  .header-f__list {
+    font-size: 13px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .header {
+    padding: 10px 0px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header__wrap {
+    gap: 20px;
+  }
+
+  .header__top-name {
+    display: none;
+  }
+
+  .header__contacts {
+    gap: 15px;
+  }
+
+  .header__contacts-wrap {
+    gap: 30px;
+  }
+
+  .header__tel {
+    display: none;
+  }
+
+  .header__btn {
+    display: none;
+  }
+
+  .header__nav {
+    position: absolute;
+    left: -9999px;
+    z-index: -9999;
+  }
+}
+
+@media (max-width: 575px) {
+  .header__logo {
+    width: 50px;
+  }
+
+  .header__logo img {
+    width: 40px;
+  }
+}
+
+@media (any-hover: hover) {
+  .header__tel-mob:hover {
+    background-color: var(--dark);
+  }
+
+  .header__tel:hover {
+    color: var(--primary);
+  }
+
+  .header__burger-btn:hover {
+    background-color: var(--primary);
+  }
+
+  .header__list li._important a:hover {
+    color: var(--dark);
+  }
+
+  .header__list a:hover {
+    color: var(--primary);
+    text-shadow: 0.3px 0 0 currentColor, 0 0.3px 0 currentColor, -0.3px 0 0 currentColor, 0 -0.3px 0 currentColor;
+  }
+
+  .header-f__list li._important a:hover {
+    color: var(--dark);
+  }
+
+  .header-f__list a:hover {
+    color: var(--primary);
+    text-shadow: 0.3px 0 0 currentColor, 0 0.3px 0 currentColor, -0.3px 0 0 currentColor, 0 -0.3px 0 currentColor;
+  }
+}
+
+@media (hover: none) {
+  .header__tel-mob:active {
+    background-color: var(--dark);
+  }
+
+  .header__tel:active {
+    color: var(--primary);
+  }
+
+  .header__burger-btn:active {
+    background-color: var(--primary);
+  }
+
+  .header__list li._important a:active {
+    color: var(--dark);
+  }
+
+  .header__list a:active {
+    color: var(--primary);
+    text-shadow: 0.3px 0 0 currentColor, 0 0.3px 0 currentColor, -0.3px 0 0 currentColor, 0 -0.3px 0 currentColor;
+  }
+
+  .header-f__list li._important a:active {
+    color: var(--dark);
+  }
+
+  .header-f__list a:active {
+    color: var(--primary);
+    text-shadow: 0.3px 0 0 currentColor, 0 0.3px 0 currentColor, -0.3px 0 0 currentColor, 0 -0.3px 0 currentColor;
+  }
+}

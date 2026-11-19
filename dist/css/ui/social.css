@@ -1,0 +1,59 @@
+.social {
+  display: flex;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.social .social-item {
+  --background: var(--ship);
+  --color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--background);
+  color: var(--color);
+  transition: opacity 0.3s ease;
+}
+
+.social .social-item._big {
+  width: 54px;
+  height: 54px;
+}
+
+.social .social-item._max {
+  --background: linear-gradient(73.55deg, #4cf 14.56%, #53e 63.57%, #93d 88.6%),
+    radial-gradient(
+      121.35% 50% at -2.38% -43.92%,
+      #00f 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  font-size: 18px;
+}
+
+.social .social-item._max._big {
+  font-size: 25px;
+}
+
+.social .social-item._tg {
+  --background: linear-gradient(180deg, #2aabee 0%, #229ed9 9925.83%);
+  font-size: 14px;
+}
+
+.social .social-item._tg._big {
+  font-size: 20px;
+}
+
+@media (any-hover: hover) {
+  .social .social-item:hover {
+    opacity: 0.8;
+  }
+}
+
+@media (hover: none) {
+  .social .social-item:active {
+    opacity: 0.8;
+  }
+}
